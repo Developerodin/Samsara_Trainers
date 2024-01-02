@@ -1,0 +1,12 @@
+
+@media (max-width: 768px) {
+    /* Hide content on small screens */
+    #login_Conatiner{
+      padding:0 !important;
+    }
+    #container1 {
+      display: none !important;
+    }
+  }
+
+ 

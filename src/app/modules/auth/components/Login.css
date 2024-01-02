@@ -1,0 +1,7 @@
+
+@media (max-width: 768px) {
+    /* Hide content on small screens */
+    #container1 {
+      display: none !important;
+    }
+  }
