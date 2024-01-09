@@ -6,7 +6,7 @@ const API_URL = process.env.REACT_APP_API_URL
 const token =sessionStorage.getItem('token');
 
 export const GET_USER_BY_ACCESSTOKEN_URL = `${BASE_URL}/verify_token`
-export const LOGIN_URL = `${Base_url}student_login`
+export const LOGIN_URL = `${Base_url}teacher_login`
 export const REGISTER_URL = `${BASE_URL}/signup`
 export const REQUEST_PASSWORD_URL = `${BASE_URL}/forgotPassword`
 export const RESET_PASSWORD_URL = `${BASE_URL}/resetPassword/`

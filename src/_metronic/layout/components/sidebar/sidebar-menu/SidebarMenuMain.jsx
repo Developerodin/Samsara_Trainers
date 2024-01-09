@@ -27,13 +27,42 @@ const SidebarMenuMain = () => {
       />
   
   
+ 
+
+
   
   
-  {/* <div className='menu-item mt-5'>
-          <div className='menu-content'>
-            <span className='menu-heading fw-bold  fs-7'>Manage Corporate</span>
-          </div>
-               </div> */}
+   
+  
+  
+  
+ 
+             
+        
+        <SidebarMenuItem
+            to='/classes/'
+            icon='/media/icons/duotune/communication/com013.svg'
+            title='Classes'
+            fontIcon='bi-layers'
+           
+          />
+
+<SidebarMenuItem
+            to='/recorded_classes/'
+            icon='/media/icons/duotune/communication/com013.svg'
+            title='Recorded Classes'
+            fontIcon='bi-layers'
+           
+          />
+ <SidebarMenuItem
+            to='/clients/'
+            icon='/media/icons/duotune/communication/com013.svg'
+            title='UserList'
+            fontIcon='bi-layers'
+           
+          />
+  
+  
                <SidebarMenuItem
             to='/trainers-profile/'
             icon='/media/icons/duotune/general/gen019.svg'
@@ -42,71 +71,13 @@ const SidebarMenuMain = () => {
             fontIcon='bi-layers'
            
           />
-
 <SidebarMenuItem
-            to='/record-classes/'
-            icon='/media/icons/duotune/general/gen022.svg'
-            title='Recored classes'
-            fontIcon='bi-layers'
-           
-          />
-
-{/* <SidebarMenuItem
-            to='/orders/'
-            icon='/media/icons/duotune/abstract/abs048.svg'
-            title='Orders'
-            fontIcon='bi-layers'
-           
-          /> */}
-  
-  
-   
-  
-  {/* Manage EV Owners */}
-                {/* <div className='menu-item mt-5'>
-          <div className='menu-content'>
-            <span className='menu-heading fw-bold  fs-7' style={{color:"#fff"}}>Manage Client</span>
-          </div>
-               </div> */}
-  
-               {/* {
-            userPermisson.EVOwnersOverView && (
-              <SidebarMenuItem
-              to='/evowners/overview/'
-              icon='/media/icons/duotune/abstract/abs042.svg'
-              title='Overview'
-              fontIcon='bi-layers'
-              
-            />
-          
-            )
-          } */}
-  
- 
-              <SidebarMenuItem
-            to='/live-classes/'
+            to='/custom_sessions/'
             icon='/media/icons/duotune/communication/com013.svg'
-            title='Live classes'
+            title='Custom Session'
             fontIcon='bi-layers'
            
           />
-          
-          
-           
-  
-  
-         
-              <SidebarMenuItem
-              to='information/'
-              icon='/media/icons/duotune/abstract/abs026.svg'
-              title='Information '
-              fontIcon='bi-layers'
-             
-            />
-          
-         
-  
-  
   
   
   
@@ -243,7 +214,13 @@ const SidebarMenuMain = () => {
   
   
   
-  
+  <SidebarMenuItem
+              to='information/'
+              icon='/media/icons/duotune/abstract/abs026.svg'
+              title='Information '
+              fontIcon='bi-layers'
+             
+            />
   
   
   

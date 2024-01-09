@@ -19,6 +19,18 @@ import Information from "../pages/Manage Client/Complains/Information";
 import LiveClasses from "../pages/Manage Client/User List/LiveClasses";
 import { TrainersProfielView } from "../pages/Manage Corporate/TrainersProfielView";
 import { ZoomMeeetingRoom } from "../pages/Manage Client/User List/ZoomMeeetingRoom";
+import { ManageClasses } from "../pages/Manage CLasses/ManageClasses";
+import { ClassView } from "../pages/Manage CLasses/ClassView";
+import { UpdateClasses } from "../pages/Manage CLasses/UpdateClasses";
+import { CustomSessions } from "../pages/Manage CLasses/CustomSessions";
+import { AddNewRecording } from "../pages/Manage CLasses/AddNewRecording";
+import { UpdateRecordedClass } from "../pages/Manage CLasses/UpdateRecordedClass";
+import { RecordedClasses } from "../pages/Manage CLasses/RecordedClasses";
+import { AddNewClass } from "../pages/Manage CLasses/AddNewClass";
+import UserList from "../pages/Manage Users/User List/UserList";
+import { UserView } from "../pages/Manage Users/User List/UserView";
+import { PersonalUserUpdate } from "../pages/Manage Users/User List/PersonalUserUpdate";
+import { ZoomMeeetingRoom2 } from "../pages/Manage CLasses/ZoomMeeetingRoom2";
 
 const PrivateRoutes = () => {
   const { userPermisson } = useContext(UserContext);
@@ -34,14 +46,7 @@ const PrivateRoutes = () => {
 
         <Route path="menu-test" element={<MenuTestPage />} />
 
-        <Route
-          path="record-classes/*"
-          element={
-            <SuspensedView>
-              <RecordClasses />
-            </SuspensedView>
-          }
-        />
+    
 
         <Route
           path="trainers-profile/*"
@@ -122,6 +127,110 @@ const PrivateRoutes = () => {
           element={
             <SuspensedView>
               <Group />
+            </SuspensedView>
+          }
+        />
+
+<Route
+          path='classes/*'
+          element={
+            <SuspensedView>
+              <ManageClasses/>
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='classes/add_class/*'
+          element={
+            <SuspensedView>
+              <AddNewClass/>
+            </SuspensedView>
+          }
+        />
+
+<Route
+          path="classes/zoom-meeting/*"
+          element={
+            <SuspensedView>
+              <ZoomMeeetingRoom2 />
+            </SuspensedView>
+          }
+        />
+
+<Route
+          path='classes/class_view/:id'
+          element={
+            <SuspensedView>
+              <ClassView/>
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='classes/class_update/:id'
+          element={
+            <SuspensedView>
+              <UpdateClasses/>
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='custom_sessions/*'
+          element={
+            <SuspensedView>
+              <CustomSessions/>
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='recorded_classes/add_class_recording/*'
+          element={
+            <SuspensedView>
+              <AddNewRecording/>
+            </SuspensedView>
+          }
+        />
+
+<Route
+          path='recorded_classes/update/:id*'
+          element={
+            <SuspensedView>
+              <UpdateRecordedClass/>
+            </SuspensedView>
+          }
+        />
+
+<Route
+          path='recorded_classes/*'
+          element={
+            <SuspensedView>
+              <RecordedClasses/>
+            </SuspensedView>
+          }
+        />
+
+<Route
+            path='clients/*'
+            element={
+              <SuspensedView>
+                <UserList/>
+              </SuspensedView>
+            }
+          />
+
+<Route
+          path='clients/user_view/:id*'
+          element={
+            <SuspensedView>
+              <UserView />
+            </SuspensedView>
+          }
+        />
+
+<Route
+          path='clients/personalUserUpdate/:id*'
+          element={
+            <SuspensedView>
+              <PersonalUserUpdate />
             </SuspensedView>
           }
         />
