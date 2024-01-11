@@ -90,7 +90,7 @@ const AuthLayout = () => {
               <div style={{display:"flex",justifyContent:"center",alignItems:"center" }}>
                 <img
                   style={{ height: "250px" }}
-                  src="https://res.cloudinary.com/dgerdfai4/image/upload/f_auto/v1572073938/website/lp/hero-image-home.jpg"
+                  src="https://verv.com/wp-content/uploads/2018/12/seiza_pose-e1545294218881.jpg"
                   alt="img"
                 />
               </div>
@@ -106,7 +106,7 @@ const AuthLayout = () => {
               <div style={{display:"flex",justifyContent:"center",alignItems:"center"  }}>
                 <img
                   style={{ height: "250px" }}
-                  src="https://res.cloudinary.com/dgerdfai4/image/upload/f_auto/v1572073938/website/lp/display-one.jpg"
+                  src="https://staticg.sportskeeda.com/editor/2022/11/2ca83-16687038360374-1920.jpg"
                   alt="img"
                 />
               </div>
@@ -166,7 +166,7 @@ const AuthLayout = () => {
               <div style={{display:"flex",justifyContent:"center",alignItems:"center" }}>
                 <img
                   style={{ height: "250px" }}
-                  src="https://res.cloudinary.com/dgerdfai4/image/upload/f_auto/v1572073938/website/lp/display-two.jpg"
+                  src="https://clipground.com/images/yoga-png-image-2.png"
                   alt="img"
                 />
               </div>
