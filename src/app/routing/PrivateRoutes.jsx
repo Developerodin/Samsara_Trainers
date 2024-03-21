@@ -31,6 +31,7 @@ import UserList from "../pages/Manage Users/User List/UserList";
 import { UserView } from "../pages/Manage Users/User List/UserView";
 import { PersonalUserUpdate } from "../pages/Manage Users/User List/PersonalUserUpdate";
 import { ZoomMeeetingRoom2 } from "../pages/Manage CLasses/ZoomMeeetingRoom2";
+import { ZoomCdn } from "../pages/Manage CLasses/ZoomCdn";
 
 const PrivateRoutes = () => {
   const { userPermisson } = useContext(UserContext);
@@ -153,6 +154,15 @@ const PrivateRoutes = () => {
           element={
             <SuspensedView>
               <ZoomMeeetingRoom2 />
+            </SuspensedView>
+          }
+        />
+
+<Route
+          path="classes/zoom-cdn/*"
+          element={
+            <SuspensedView>
+              <ZoomCdn />
             </SuspensedView>
           }
         />
