@@ -9,18 +9,20 @@ import { Base_url } from '../../Config/BaseUrl';
 export const ZoomCdn = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const storedUser = JSON.parse(sessionStorage.getItem('User'));
+      // console.log("user in session storage ",storedUser)
     const { ZoomMeetingNumber } = location.state; 
   var authEndpoint = Base_url
   var sdkKey = 'TsFvuPFLTeKf7_bNBWggPA'
   var meetingNumber =ZoomMeetingNumber.number
   var passWord = ZoomMeetingNumber.pass
   var role = 1
-  var userName = "ADMIN"
-  var userEmail = "admin@gmail.com"
+  var userName = storedUser.name
+  var userEmail = storedUser.email
   var registrantToken = ''
   var zakToken = ''
   var leaveUrl = '/'
-  var userId="admin@gmail.com"
+  var userId=storedUser.email
   var SECRET="C7Dm4JuZ2QXoN0bM2OYTw5JxZvjPK1y9"
   
 

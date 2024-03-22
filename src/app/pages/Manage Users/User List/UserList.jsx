@@ -88,17 +88,16 @@ const UserList = () => {
     {name:"Email"},
     {name:"Phone"},
     {name:"Address"},
-    {name:"Company"},
-    {name:"Company Id"},
     {name:"city"},
     // {name:"Charge Duration"},
     {name:"Status"},
     // {name:"Wallet"},
     
     // {name:"Vehicles"},
- 
+    // {name:"Active"},
     {name:"View"},
-    
+    // {name:"Update"},
+    // {name:"Delete"}
   ]
   const inputs = {
     minWidth: "100%",
@@ -152,7 +151,86 @@ const UserList = () => {
     setSearchInput(inputValue);
   };
 
-  
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/customers/customers
+      `, {
+        headers: { Authorization: `${token}` },
+      });
+      // Assuming the response data is an array of objects with the required properties
+      
+      const data = response.data;
+      const CustomersData=data.data.users;
+      console.log("response chargers==>", CustomersData);
+      if(data && data.status === 'success'){
+           const formattedData = CustomersData.map((item) => ({
+          "Name":item.name,
+          "Email":item.email,
+          "Phone":item.phone_number,
+         
+          "Status":item.status ? <Button color='success' variant="contained" >Active</Button> : <Button color='error' variant="contained">Inactive</Button>,
+          // "Wallet":<Button sx={{color:"black"}}onClick={()=>handelWalletClick(item._id,item)}><AccountBalanceWalletIcon/></Button>,
+      
+          "Active":<Switch checked={item.status}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
+     
+          // "Functional":<Switch checked={item.functional}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
+          
+        Update: <BorderColorIcon onClick={() => handleUpdateCustomerOpen(item._id)} />,
+        Delete: <DeleteIcon  onClick={() => handelDeleteCustomer(item._id)}/>
+      }));
+      const ActiveUsers = CustomersData.filter((item) => {
+        return item.status === true;
+      });
+      const ActiveData = ActiveUsers.map((item) => ({
+        "Name":item.name,
+        "Email":item.email,
+        "Phone":item.phone_number,
+        "Charge Duration":"100 hrs",
+        "Status":item.status ? <Button color='success' variant="contained" >Active</Button> : <Button color='error' variant="contained">Inactive</Button>,
+        "Wallet":<Button sx={{color:"black"}}onClick={()=>handelWalletClick(item._id,item)}><AccountBalanceWalletIcon/></Button>,
+        "Vehicles":"tata Ev4",
+        "Active":<Switch checked={item.status}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
+        "Icon":<AddVehicle/>,
+        // "Functional":<Switch checked={item.functional}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
+        
+      Update: <BorderColorIcon onClick={() => handleUpdateCustomerOpen(item._id)} />,
+      Delete: <DeleteIcon  onClick={() => handelDeleteCustomer(item._id)}/>
+    }));
+
+      const InActiveUsers = CustomersData.filter((item) => {
+        return item.status === false;
+      });
+
+      const InActiveData = InActiveUsers.map((item) => ({
+        "Name":item.name,
+        "Email":item.email,
+        "Phone":item.phone_number,
+        "Charge Duration":"100 hrs",
+        "Status":item.status ? <Button color='success' variant="contained" >Active</Button> : <Button color='error' variant="contained">Inactive</Button>,
+        "Wallet":<Button sx={{color:"black"}}onClick={()=>handelWalletClick(item._id,item)}><AccountBalanceWalletIcon/></Button>,
+        "Vehicles":"tata Ev4",
+        "Active":<Switch checked={item.status}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
+        "Icon":<AddVehicle/>,
+        // "Functional":<Switch checked={item.functional}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
+        
+      Update: <BorderColorIcon onClick={() => handleUpdateCustomerOpen(item._id)} />,
+      Delete: <DeleteIcon  onClick={() => handelDeleteCustomer(item._id)}/>
+    }));
+
+      setRows(formattedData);
+      setFilterRows(formattedData);
+      setActiveUsers(ActiveData);
+      setInActiveUsers(InActiveData);
+      }
+      else{
+        setRows([]);
+      }
+      
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setRows([]);
+    }
+  };
 
   const handelUserView = (id)=>{
     navigate(`user_view/${id}`)
@@ -164,25 +242,24 @@ const UserList = () => {
       const Data= response.data.data.users
       console.log("User Data ==>",Data)
       if(Data){
-        // const Users = Data.filter((item) => {
-        //   return item.corporate_id === "";
-        // });
-          const formattedData = Data.map((item) => ({
-         
+        const Users = Data.filter((item) => {
+          return item.corporate_id === "";
+        });
+          const formattedData = Users.map((item) => ({
          "Name":item.name,
          "Email":item.email,
          "Phone":item.mobile,
          "Address":item.Address,
-         "Comapnay":item.company_name !== "" ? item.company_name : "None",
-         "Comapnay Id":item.corporate_id !== "" ? item.corporate_id : "None",
         "City":item.city,
          "Status":item.status ? <Button color='success' variant="contained" >Active</Button> : <Button color='error' variant="contained">Inactive</Button>,
          // "Wallet":<Button sx={{color:"black"}}onClick={()=>handelWalletClick(item._id,item)}><AccountBalanceWalletIcon/></Button>,
      
-      
+        //  "Active":<Switch checked={item.status}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
           "View":<RemoveRedEyeIcon onClick={()=>handelUserView(item._id)}/>,
          // "Functional":<Switch checked={item.functional}  onChange={(e)=>handleSwitchChange(e,item._id)} />,
-        
+         
+      //  Update: <BorderColorIcon onClick={() => handleUpdateCustomerOpen(item._id)} />,
+      //  Delete: <DeleteIcon  onClick={() => handelDeleteCustomer(item._id)}/>
      }));
   //    const ActiveUsers = CustomersData.filter((item) => {
   //      return item.status === true;
@@ -595,14 +672,14 @@ const UserList = () => {
       </Box>
 
             <Box >
-            {/* <Button
+            <Button
           variant="contained"
           style={{backgroundColor:`${ThemColor.buttons}`,marginRight:"15px"}}
           startIcon={<AddCircle />}
           onClick={handelAddNew}
         >
           Add User
-        </Button> */}
+        </Button>
              
               <Button variant='contained' style={{backgroundColor:`${ThemColor.buttons}`}}>
                 <TuneIcon />

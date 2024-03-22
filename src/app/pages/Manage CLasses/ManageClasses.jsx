@@ -411,6 +411,7 @@ useEffect(() => {
     useEffect(() => {
       // Fetch all classes when the component mounts
       getAllClasses();
+      
     }, [update]);
   return (
     <div>
