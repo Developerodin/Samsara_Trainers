@@ -87,7 +87,7 @@
     "webpack-cli": "4.10.0"
   },
   "scripts": {
-    "start": "react-scripts --max_old_space_size=8096 start",
+    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
