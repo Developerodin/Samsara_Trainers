@@ -124,8 +124,9 @@ export const TrianersProfiels = () => {
       const Data= response.data.data.teachers
       console.log("Trainer Data ==>",Data)
       if(Data){
-        setTeacherData(Data)
-     setFilterRows(Data);
+        const TData = Data.filter((el)=>el._id !== user._id)
+        setTeacherData(TData)
+     setFilterRows(TData);
 
     
     

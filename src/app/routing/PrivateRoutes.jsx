@@ -166,6 +166,14 @@ const PrivateRoutes = () => {
             </SuspensedView>
           }
         />
+        <Route
+          path="custom_sessions/zoom-cdn/*"
+          element={
+            <SuspensedView>
+              <ZoomCdn />
+            </SuspensedView>
+          }
+        />
 
 <Route
           path='classes/class_view/:id'

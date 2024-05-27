@@ -65,11 +65,11 @@ const Card3 = ({
         </div>
 
 <div className='d-flex flex-center flex-wrap mb-5'>
-<a onClick={()=>FunBookNow(id)} className='btn btn-sm btn-dark mr-10' style={{marginRight:20}}>
+{/* <a onClick={()=>FunBookNow(id)} className='btn btn-sm btn-dark mr-10' style={{marginRight:20}}>
           
           Book Class
-          {/* <KTSVG path='/media/icons/duotune/arrows/arr075.svg'  className='svg-icon-3 mt-5' /> */}
-        </a>
+          
+        </a> */}
         <a  onClick={()=>{Fun(id)}} className='btn btn-sm btn-dark' >
           
           View Profile
