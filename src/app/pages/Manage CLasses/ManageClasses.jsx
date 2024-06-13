@@ -23,8 +23,8 @@ const column=[
     {name:"Recordings"},
     {name:"Status"},
     {name:"View"},
-    {name:"Update"},
-    {name:"Delete"},
+    // {name:"Update"},
+    // {name:"Delete"},
     {name:"Meeting"}
     
   ]
@@ -361,8 +361,8 @@ useEffect(() => {
           "Recordings":"coming soon",
           "Status":item.status ? <Button color='success' variant="contained" >Active</Button> : <Button color='error' variant="contained">Inactive</Button>,
            "View":<RemoveRedEyeIcon onClick={()=>handelClassView(item._id)}/>, 
-         "Update": <BorderColorIcon onClick={() => handleUpdateClassOpen(item._id)} />,
-         "Delete": <DeleteIcon  onClick={() => handelDeleteClass(item._id)}/>,
+        //  "Update": <BorderColorIcon onClick={() => handleUpdateClassOpen(item._id)} />,
+        //  "Delete": <DeleteIcon  onClick={() => handelDeleteClass(item._id)}/>,
          "Meeting":<Box style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
           
           <Button variant='contained' onClick={()=>handelMeetingStart(item,item._id)}>Start</Button>

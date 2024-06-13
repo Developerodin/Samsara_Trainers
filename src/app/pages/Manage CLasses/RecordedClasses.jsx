@@ -21,8 +21,8 @@ const column=[
     {name:"Date"},
     {name:"Description"},
     {name:"Status"},
-    {name:"Update"},
-    {name:"Delete"},
+    // {name:"Update"},
+    // {name:"Delete"},
     {name:"Action"}
     
   ]
@@ -104,8 +104,8 @@ export const RecordedClasses = () => {
            "Date":item.createdAt,
            "Description":item.description,
           "Status":item.status ? <Button color='success' variant="contained" >Active</Button> : <Button color='error' variant="contained">Inactive</Button>,
-         "Update": <BorderColorIcon onClick={() => handleUpdateClassOpen(item._id)} />,
-         "Delete": <DeleteIcon  onClick={() => handelDeleteClass(item._id)}/>,
+        //  "Update": <BorderColorIcon onClick={() => handleUpdateClassOpen(item._id)} />,
+        //  "Delete": <DeleteIcon  onClick={() => handelDeleteClass(item._id)}/>,
          "Action":item.status ? <Button color='error' variant="contained" onClick={()=>handleStatusChange(item._id,false)} >Hide</Button> : <Button color='success' variant="contained" onClick={()=>handleStatusChange(item._id,true)} >Show</Button>
       
        }));

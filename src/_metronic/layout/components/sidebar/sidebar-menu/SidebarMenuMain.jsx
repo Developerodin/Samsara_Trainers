@@ -54,13 +54,13 @@ const SidebarMenuMain = () => {
             fontIcon='bi-layers'
            
           />
- <SidebarMenuItem
+ {/* <SidebarMenuItem
             to='/clients/'
             icon='/media/icons/duotune/communication/com013.svg'
             title='UserList'
             fontIcon='bi-layers'
            
-          />
+          /> */}
   
   
                <SidebarMenuItem
@@ -214,13 +214,13 @@ const SidebarMenuMain = () => {
   
   
   
-  <SidebarMenuItem
+  {/* <SidebarMenuItem
               to='information/'
               icon='/media/icons/duotune/abstract/abs026.svg'
               title='Class Information '
               fontIcon='bi-layers'
              
-            />
+            /> */}
   
   
   
